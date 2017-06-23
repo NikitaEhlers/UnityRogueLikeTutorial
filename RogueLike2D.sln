@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RogueLike2D", "RogueLike2D.csproj", "{7F6C941B-D4AB-DFD0-B174-EB9C84BA7E20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RogueLike2D.Editor", "RogueLike2D.Editor.csproj", "{E0E6B7E2-E409-0DFF-0443-9AD2BB695AEB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7F6C941B-D4AB-DFD0-B174-EB9C84BA7E20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F6C941B-D4AB-DFD0-B174-EB9C84BA7E20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F6C941B-D4AB-DFD0-B174-EB9C84BA7E20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F6C941B-D4AB-DFD0-B174-EB9C84BA7E20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0E6B7E2-E409-0DFF-0443-9AD2BB695AEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0E6B7E2-E409-0DFF-0443-9AD2BB695AEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0E6B7E2-E409-0DFF-0443-9AD2BB695AEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0E6B7E2-E409-0DFF-0443-9AD2BB695AEB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
