@@ -59,7 +59,7 @@ public class BoardManager : MonoBehaviour {
         for (int x = -1; x < columns + 1; x ++)
         {
             //loop along y axis from -1 to place floor or outerwall tiles
-            for (int y = -1; y < rows; y ++)
+            for (int y = -1; y < rows + 1; y ++)
             {
                 //choose a random tile from array of floor tile prefabs and prepare to instantiate it
                 GameObject toInstantiate = floorTiles[Random.Range(0, floorTiles.Length)];
@@ -77,5 +77,47 @@ public class BoardManager : MonoBehaviour {
                 instance.transform.SetParent(boardHolder);
             }
         }
+    }
+
+    //returns random position for list gridPositions
+    Vector3 RandomPosition ()
+    {
+        int randomIndex = Random.Range(0, gridPositions.Count);
+
+        Vector3 randomPosition = gridPositions[randomIndex];
+
+        //remove entry at randomIndex so don't spawn 2 objects on the same place
+        gridPositions.RemoveAt(randomIndex);
+
+        return randomPosition;
+    }
+
+    void LayoutObjectAtRandom (GameObject[] tileArray, int minimum, int maximum)
+    {
+        int objectCount = Random.Range(minimum, maximum+1);
+
+        for (int i = 0; i < objectCount; i++)
+        {
+
+            Vector3 randomPosition = RandomPosition();
+
+            GameObject tileChoice = tileArray[Random.Range(0, tileArray.Length)];
+
+            Instantiate(tileChoice, randomPosition, Quaternion.identity);
+        }
+    }
+
+    public void SetupScene (int level)
+    {
+        BoardSetup();
+        InitialiseList();
+
+        LayoutObjectAtRandom(wallTiles, wallCount.minimum, wallCount.maximum);
+        LayoutObjectAtRandom(foodTiles, foodCount.minimum, foodCount.maximum);
+
+        int enemyCount = (int)Mathf.Log(level, 2f);
+        LayoutObjectAtRandom(enemyTiles, enemyCount, enemyCount);
+
+        Instantiate(exit, new Vector3(columns - 1, rows - 1, 0f), Quaternion.identity);
     }
 }
